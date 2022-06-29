@@ -1,14 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <py-script> print('Hello AWESOME World') </py-script>
-</body>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PyScript</title>
+
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+
+        <style>
+            body {
+                background-color: #000000;
+                color: #ffffff;
+            }
+
+            textarea {
+                background-color: #000000;
+                color: #ffffff;
+                height: 100%;
+                width: 60%;
+                border: .3em solid #2bff00;
+            }
+
+            button {
+                border: .3em solid #2bff00;
+            }
+        </style>
+        <script>
+            function run() {
+                console.clear();
+                var code = document.querySelector('textarea').value;
+                console.log(code);
+
+                var pyscript = document.createElement('py-script');
+                pyscript.innerHTML = code;
+                document.body.appendChild(pyscript);
+            }
+        </script>
+    </head>
+
+    <body>
+        <py-script> print('Hello AWESOME World') </py-script>
+
+        <textarea placeholder="Write code:"></textarea>
+        <button onclick="run()">RUN</button>
+    </body>
 </html>
